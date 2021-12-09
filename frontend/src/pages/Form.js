@@ -9,8 +9,7 @@ const Form = () => {
     e.preventDefault()
     
     const student = {
-      name: name,
-
+      name: name
     }
     
     fetch('http://localhost:5000/students', {
@@ -29,14 +28,15 @@ const Form = () => {
 
   return (
     <>
+    <h1>Formulaire</h1>
     <form onSubmit={handleSubmit}>
       <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
       <button type="submit">Creer student</button>
-    </form>
+    </form>  
     {isSended && 
     (
       <>
-      <h1>Bravo vous êtes inscrit</h1>
+      <h2>Bravo vous êtes inscrit</h2>
       <Link to='/'>
         <p>Retourner au menu d'acceuil</p>
       </Link>
